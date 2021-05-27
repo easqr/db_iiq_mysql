@@ -1,0 +1,96 @@
+[mysqld]
+
+#Settings for docker
+innodb-flush-method = fsync
+default_authentication_plugin = mysql_native_password
+
+# Settings to support IdentityIQ for SailPoint. --Adam Hampton
+
+innodb_file_per_table = 1
+
+innodb_buffer_pool_size = 128M
+
+# This setting has been deprecated in MySQL 5.6:
+
+# innodb_additional_mem_pool_size = 20M
+
+max_connections = 257
+
+key_buffer_size = 256M
+
+max_allowed_packet = 256M
+
+table_open_cache = 256
+
+sort_buffer_size = 1M
+
+read_buffer_size = 1M
+
+read_rnd_buffer_size = 4M
+
+myisam_sort_buffer_size = 64M
+
+thread_cache_size = 8
+
+
+# This setting has been deprecated as of MySQL 5.6:
+
+### Try number of CPU's*2 for thread_concurrency
+
+##thread_concurrency = 16
+
+innodb_log_file_size = 64M
+
+innodb_log_buffer_size = 8M
+
+innodb_flush_log_at_trx_commit = 1
+
+innodb_lock_wait_timeout = 50
+
+# Remove leading # and set to the amount of RAM for the most important data
+
+# cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.
+
+# innodb_buffer_pool_size = 128M
+
+# innodb_additional_mem_pool_size = 20M
+
+# Remove leading # to turn on a very important data integrity option: logging
+
+# changes to the binary log between backups.
+
+# log_bin
+
+# These are commonly set, remove the # and set as required.
+
+# basedir = .....
+
+# datadir = .....
+
+# port = .....
+
+# server_id = .....
+
+# socket = .....
+
+# Remove leading # to set options mainly useful for reporting servers.
+
+# The server defaults are faster for transactions and fast SELECTs.
+
+# Adjust sizes as needed, experiment to find the optimal values.
+
+# join_buffer_size = 128M
+
+# sort_buffer_size = 2M
+
+# read_rnd_buffer_size = 2M
+
+# IdentityIQ Requires no STRICT_TRANS_TABLES in sql_mode.
+
+# sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+
+sql_mode=NO_ENGINE_SUBSTITUTION
+
+[mysqldump]
+
+max_allowed_packet = 16M
