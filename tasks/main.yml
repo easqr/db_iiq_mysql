@@ -1,0 +1,22 @@
+#Create Database Volumes
+- name: Create Database Volume
+  docker_volume:
+    name: "{{ db_volume_name }}"
+  register: created_db_volume
+
+#Deploy the database
+- name: Deploy Database
+  docker_container:
+    name: "{{ db_container_name }}"
+    image: "{{ db_image }}"
+    published_ports:
+      - "{{ db_port }}:3306"
+    env:
+      MYSQL_ROOT_PASSWORD: "{{ db_admin_password }}"
+    volumes:
+      - '{{ db_volume_name }}:/var/lib/mysql'
+      - '{{ mysql_configdir }}:/etc/mysql/conf.d'
+    networks:
+      - name: "{{network_name}}"
+    network_mode: "{{network_name}}"
+    container_default_behavior: compatibility
