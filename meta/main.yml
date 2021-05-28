@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: db_iiq_mysql
+  role_name: iiq_db
   author: Eli Anderson
   description: Deploys an instance of MySQL to be used for IdentityIQ sandbox development
   company: EA Squared, LLC
