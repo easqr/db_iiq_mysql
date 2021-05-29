@@ -22,5 +22,5 @@ mysql_configdir: ./mysqlconfig
 #Name of the docker network to attach the generated containers to.  Usually overriden in the format of <company name>_iiq
 network_name: sandbox_iiq
 
-#Database type to deploy.  Valid values are mysql and mssql
+#Database type to deploy.  Valid values are mysql and sqlserver
 db_type: mysql
