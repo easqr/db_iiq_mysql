@@ -1,4 +1,4 @@
-# Ansible Role: db_iiq_mysql
+# Ansible Role: iiq_db
 Deploy a Docker instance of MySQL to be used in an IdentityIQ Sandbox environment
 
 ## Requirements
