@@ -40,3 +40,7 @@ The mysql configuration directory
     network_name: sandbox_iiq
     
 Name of the docker network to attach the generated containers to.  Usually overriden in the format of <company name>_iiq
+
+    db_type: mysql
+
+Database type to deploy.  Valid values are mysql and mssql
