@@ -1,6 +1,9 @@
 #Name of the volume for the MySQL data directory.  Usually overriden in the format of <company name>_iiq_db_data
 db_volume_name: sandbox_iiq_db_data
 
+#Name of the MS SQL Backups Volume.  This is only used if the db_type is mssql
+mssqlbackups_volume_name: sandbox_iiq_db_mssqlbackups
+
 #Name of the MySQL container.  Usually overriden in the format of <company name>_iiq_db
 db_container_name: sandbox_iiq_db
 
@@ -18,3 +21,6 @@ mysql_configdir: ./mysqlconfig
 
 #Name of the docker network to attach the generated containers to.  Usually overriden in the format of <company name>_iiq
 network_name: sandbox_iiq
+
+#Database type to deploy.  Valid values are mysql and mssql
+db_type: mysql
