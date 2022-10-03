@@ -19,6 +19,9 @@ db_image: mysql:8.0.17
 #The mysql configuration directory
 mysql_configdir: ./mysqlconfig
 
+#The mysql config file
+mysql_config_file: iiq-config-file.cnf
+
 #Name of the docker network to attach the generated containers to.  Usually overriden in the format of <company name>_iiq
 network_name: sandbox_iiq
 

@@ -37,6 +37,10 @@ The MySQL image to use
 
 The mysql configuration directory
 
+    mysql_config_file: iiq-config-file.cnf
+
+The IIQ specific mysql configuration file
+
     network_name: sandbox_iiq
     
 Name of the docker network to attach the generated containers to.  Usually overriden in the format of <company name>_iiq

@@ -7,7 +7,7 @@
 #Copy the IIQ configuration file to the mysql_config directory
 - name: Copy IIQ Config File
   copy:
-    src: iiq-config-file.cnf
+    src: '{{ mysql_config_file }}'
     dest: '{{ mysql_configdir }}/iiq-config-file.cnf'
 
 #Deploy the database
