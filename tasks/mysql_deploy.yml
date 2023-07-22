@@ -16,7 +16,7 @@
     name: "{{ db_container_name }}"
     image: "{{ db_image }}"
     published_ports:
-      - "{{ db_port }}:3306"
+      - "{{ db_port }}:{{ network_db_port }}"
     env:
       MYSQL_ROOT_PASSWORD: "{{ db_admin_password }}"
     volumes:

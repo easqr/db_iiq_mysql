@@ -1,19 +1,14 @@
-- name: Create MS SQL Backup Volume
-  docker_volume:
-    name: "{{ mssqlbackups_volume_name }}"
-
-- name: deploy MSSQL
+#Deploy the database
+- name: Deploy Database
   docker_container:
     name: "{{ db_container_name }}"
     image: "{{ db_image }}"
     published_ports:
       - "{{ db_port }}:{{ network_db_port }}"
     env:
-      ACCEPT_EULA: Y
-      MSSQL_SA_PASSWORD: "{{ db_admin_password }}"
+      ORACLE_PASSWORD: "{{ db_admin_password }}"
     volumes:
-      - '{{ db_volume_name }}:/var/opt/mssql'
-      - '{{ mssqlbackups_volume_name }}:/var/opt/mssql/backups'
+      - '{{ db_volume_name }}:/opt/oracle/oradata'
     networks:
       - name: "{{network_name}}"
     network_mode: "{{network_name}}"
